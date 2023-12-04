@@ -2,6 +2,7 @@ const userRepo = require("../repositories/user.repository");
 const blogRepo = require("../repositories/blog.repository");
 
 module.exports.createBlog = async (title, blogContent, loggedInUserId) => {
+    console.log("abc");
     const user = await userRepo.getUserById(loggedInUserId);
 
     if (!user) {

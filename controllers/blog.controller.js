@@ -9,7 +9,10 @@ module.exports.createBlog = async (req, res, next) => {
         console.log(title, blogContent, loggedInUserId);
         const createdBlog = await blogService.createBlog(title, blogContent, loggedInUserId);
 
-        return res.status(201).send(createdBlog);
+        console.log("before return", createdBlog);
+        res.status(201);
+        res.send(createdBlog);
+        return;
     } catch (error) {
         return next(error);
     }
